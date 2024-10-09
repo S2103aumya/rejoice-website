@@ -20,28 +20,51 @@ page1Content.addEventListener("mouseleave",function(){
     })
 })
 
-function page2Animation() {
-    var tl = gsap.timeline({
-        scrollTrigger: {
-            scrub: 2,
-            stagger:1,
-            trigger: ".page2-content",
-            start: "top 40%",     // Animation starts when the top of #page2 hits 80% of the viewport
-            end: "top 30%"         // Animation ends when the top of #page2 hits 5% of the viewport
+function page2Animation(){
+    var tl=gsap.timeline({
+        scrollTrigger:{
+            trigger:".page2",
+            // markers:true,
+            start: "top 80%",
+            end:"top 5%",
         }
     });
-
-    // Add your animation here, for example:
-    tl.from(".page2-content", {
-        y: 100,                  // Start from 100px below
-        duration: 0.5,           // Duration of 1.5 seconds
-        ease: "power2.out"       // Smooth easing
-    });
+    tl.from(".page2-content p, .page2-content h5",{
+        y:80,  
+        ease: "power3.Inout",
+        opacity:0,
+        duration: 1, 
+        stagger: 0.3,  
+        toggleActions: "restart none none none",
+    })
+    tl.from(".page2 .line", {
+        width: "0%",
+        // duration: 0.8, // Animation duration
+        ease: Power4.InOut // Easing function
+    },0.5);
+    tl.from(".up",{
+        // y: "3vw",
+        duration: 1,
+    })
 }
-document.addEventListener("DOMContentLoaded", function() {
-    page2Animation();
-});
+page2Animation();
 
+function page3Animation(){
+    var tl=gsap.timeline({
+        scrollTrigger:{
+            trigger: ".page3top",
+        }
+    })
+    tl.from(".page3top h2",{
+        y:80,  
+        ease: "power3.Inout",
+        opacity:0,
+        duration: 1, 
+        stagger: 0.3,  
+        toggleActions: "restart none none none",
+    })
+}
+page3Animation();
 var swiper = new Swiper(".mySwiper", {
     spaceBetween: 10,
     loop: true,

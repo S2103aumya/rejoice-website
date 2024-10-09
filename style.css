@@ -76,6 +76,10 @@ nav h3{
 .page2-content{
     padding: 6vw 3vw;
 }
+.line{
+    height: 1px;
+    background-color: #131212;
+}
 .page2i{
     display: flex;
     justify-content: space-between;
@@ -91,7 +95,7 @@ nav h3{
     font-size: 4.5vw;
     font-weight: 200;
     padding: 1vw;
-    line-height: 4.3vw;
+    line-height: 60px;
 }
 .page3{
     min-height: 100vh;
